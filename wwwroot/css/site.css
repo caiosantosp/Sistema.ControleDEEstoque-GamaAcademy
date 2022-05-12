@@ -1,0 +1,140 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+:root {
+    --prim_01: #0AA2C0;
+    --sec_01: #4DD4AC;
+    --terc_01: #CC9A06;
+    --alt_01: #612F78;
+    --bg_master: #E5E5E5;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&display=swap');
+
+.bg-prim {
+    background-color: var(--prim_01);
+}
+
+.br-sec {
+    background-color: var(--sec_01);
+}
+
+.bg-terc {
+    background-color: var(--terc_01);
+}
+
+.bg-alt {
+    background-color: var(--alt_01);
+}
+
+.bg-master {
+    background-color: var(--bg_master);
+}
+
+.text-primary {
+    color: #f5f5f5 !important;
+    text-decoration: none !important;
+}
+
+.m-left-20 {
+    margin-left: 20px;
+}
+
+#logo {
+    color: #f5f5f5 !important;
+}
+
+.login_base {
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+a.navbar-brand {
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a, i {
+    color: #f5f5f5 /* #0366d6*/ !important;
+    text-decoration: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 16px;
+    font-family: 'Roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+::placeholder{
+    font-size: 12px;
+}
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #edfafa !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.imgControle {
+    max-width: auto;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+}

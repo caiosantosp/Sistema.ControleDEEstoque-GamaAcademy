@@ -1,0 +1,80 @@
+﻿@page
+@model ControleDeEstoque.Pages.Produtos.EditModel
+@{ViewData["Title"] = "Editar";
+}
+
+<div class="container col-8">
+    <h4 class="text-center"> Atualizar Produto</h4>
+    <hr />
+
+    <div class="card shadow h-100 py-2">
+        <div class="card-body">
+
+            <form method="Post">
+                <input type="hidden" asp-for="Produto.ID" />
+                <div class="row my-2">
+                    <div class="col">
+                        <label asp-for="Produto.nome">Nome*</label>
+                        <input placeholder="Descrição do produto" asp-for="Produto.nome"
+                               class="form-control" maxlength="12" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Produto.modelo">Modelo*</label>
+                        <input placeholder="Modelo do produto" asp-for="Produto.modelo"
+                               class="form-control" maxlength="12" required />
+                    </div>
+                    <div class="col">
+                        <label asp-for="Produto.quantidade">Quantidade*</label>
+                        <input placeholder="Quantidade do produto" asp-for="Produto.quantidade"
+                               class="form-control" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Produto.tamanho">Tamanho*</label>
+                        <input placeholder="Tamanho do produto" asp-for="Produto.tamanho"
+                               class="form-control" required />
+                    </div>
+                    <div class="col">
+                        <label asp-for="Produto.preco">Preço de Venda*</label>
+                        <input placeholder="Preço unitário do produto" asp-for="Produto.preco"
+                               class="form-control" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Produto.imagem">Imagem*</label>
+                        <input placeholder="Imagem do produto" asp-for="Produto.imagem"
+                               class="form-control" required />
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label asp-for="Produto.Categoria.ID">Categoria*</label>
+                        </div>
+                        <select asp-for="Produto.Categoria.ID" required>
+                            <option value="deafault">Escolha uma Categoria</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Feminino</option>
+                            <option value="3">Infantil</option>
+                            <option value="4">Outros</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col">
+                        <label asp-for="Produto.descricao">Descrição*</label>
+                        <textarea placeholder="Descrição do produto" asp-for="Produto.descricao"
+                                  class="form-control" col="8" rows="4" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-grid mx-auto">
+                        <button class="btn btn-info" type="submit">Atualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

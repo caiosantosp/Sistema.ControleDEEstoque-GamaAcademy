@@ -1,0 +1,21 @@
+﻿@page
+@model ControleDeEstoque.Pages.Produtos.DeleteModel
+@{ViewData["Title"] = "Deletar";
+}
+
+<div class="card">
+    <div class="card-header">
+        Confirmação de exlcusão
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+            Você deseja realmente excluir o produto
+            @Html.DisplayFor(model => model.Produto.nome)?
+        </h5>
+        <p class="card-text">Isso não podera ser mais desfeito.</p>
+        <form method="post">
+            <input type="hidden" asp-for="Produto.ID" />
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+        </form>
+    </div>
+</div>

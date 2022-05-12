@@ -1,0 +1,71 @@
+﻿@page
+@model ControleDeEstoque.Pages.Vendas.CreateVendaModel
+@{ ViewData["Title"] = "Venda";
+}
+
+<div class="container col-8">
+    <h4 class="text-center">Venda do Produto</h4>
+    <hr />
+    <div class="card shadow h-100 py-2">
+        <div class="card-body">
+            <form method="Post">
+                <div class="row my-2">
+                    <div class="col">
+                        <label for="Produto">Nome*</label>
+                        <input placeholder="Nome do produto" type="text" class="form-control"
+                               id="Produto" name="Produto.name" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="Produto">Código*</label>
+                        <input placeholder="Código do produto" type="number" class="form-control"
+                               id="Produto" name="Produto.ID" required />
+                    </div>
+                    <div class="col">
+                        <label for="quantidade">Quantidade*</label>
+                        <input placeholder="Quantidade do produto" type="number"
+                               class="form-control" id="quantidade" name="quantidade" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="Produto">Modelo*</label>
+                        <input placeholder="Modelo do produto" type="text" class="form-control"
+                               id="Produto" name="Produto.modelo" required />
+                    </div>
+                    <div class="col">
+                        <label for="Produto">Tamanho*</label>
+                        <input placeholder="Tamanho do produto" type="text" class="form-control"
+                               id="Produto" name="Produto.tamanho" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="precoUnitario">Preço *</label>
+                        <input placeholder="Preço unidade" type="text" class="form-control"
+                               id="precoUnitario" name="precoUnitario" required />
+                    </div>
+                    <div class="col">
+                        <label for="data">Data*</label>
+                        <input placeholder="00 - 00 - 2021" type="text" class="form-control"
+                               id="data" name="data" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="total">Total*</label>
+                        <input placeholder="Valor total de venda" type="text" class="form-control"
+                               id="total" name="total" required />
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="d-grid mx-auto">
+                        <button class="btn btn-info" type="submit">Finalizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

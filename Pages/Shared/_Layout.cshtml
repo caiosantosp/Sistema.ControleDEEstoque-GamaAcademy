@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Controle De Estoque</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-info
+             border-bottom box-shadow mb-4">
+            <div class="container d-flex">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-page="/Index">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         fill="currentColor"
+                         class="bi bi-window-sidebar mr-2" viewBox="0 0 16 16">
+                        <path d="M2.5 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2-.5a.5.5 0 1 1-1 0
+                              .5.5 0 0 1 1 0zm1 .5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+                        <path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0
+                              0-2-2H2zm12 1a1 1 0 0 1 1 1v2H1V3a1 1 0 0 1 1-1h12zM1
+                              13V6h4v8H2a1 1 0 0 1-1-1zm5 1V6h9v7a1 1 0 0 1-1 1H6z" />
+                    </svg>
+
+                    Gerenciador de Estoque
+                </a>
+
+                <!-- Menu Hamburger -->
+                <button class="navbar-toggler bg-light text-dark" type="button"
+                        data-toggle="collapse"
+                        data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="container collapse navbar-collapse d-sm-inline-flex">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center ml-5 mr-3">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Inicio">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Produtos/Create">Cadastro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Produtos/Index">Estoque</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Vendas/CreateVenda">Venda</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - 4Dev - <a asp-area="" asp-page="/Index">Home</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

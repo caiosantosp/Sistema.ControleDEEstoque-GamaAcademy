@@ -1,0 +1,82 @@
+﻿
+
+@page
+@model ControleDeEstoque.Pages.Produtos.CreateModel
+@{ ViewData["Title"] = "Cadastro";
+}
+
+<div class="container col-8">
+    <h4 class="text-center"> Cadastro Novo Produto</h4>
+    <hr />
+
+    <div class="card shadow h-100 py-2">
+        <div class="card-body">
+
+            <form method="Post">
+                <div class="row my-2">
+                    <div class="col">
+                        <label for="Nome">Nome*</label>
+                        <input placeholder="Nome do produto" type="text" class="form-control"
+                               id="nome" name="nome" maxlength="12" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for=" modelo">Modelo*</label>
+                        <input placeholder="Modelo do produto" type="text" class="form-control"
+                               id="modelo" name="modelo" maxlength="12" required />
+                    </div>
+                    <div class="col">
+                        <label for="quantidade">Quantidade*</label>
+                        <input placeholder="Quantidade de produtos" type="number"
+                               class="form-control" id="quantidade" name="quantidade" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="preco">Preço de venda*</label>
+                        <input placeholder="Preço unidade" type="text" class="form-control"
+                               id="preco" name="preco" required />
+                    </div>
+                    <div class="col">
+                        <label for="tamanho">Tamanho*</label>
+                        <input placeholder="Tamanho do produto" type="text" class="form-control"
+                               id="tamanho" name="tamanho" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="imagem">Imagem*</label>
+                        <input placeholder="Imagem do produto" type="text" class="form-control"
+                               id="imagem" name="imagem" required />
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label for="categoria">Categoria*</label>
+                        </div>
+                        <select id="categoria" name="Categoria.ID" required>
+                            <option value="deafault">Escolha uma Categoria</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Feminino</option>
+                            <option value="3">Infantil</option>
+                            <option value="4">Outros</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col">
+                        <label for="descricao">Descrição*</label>
+                        <textarea placeholder="Descrição do produto" class="form-control"
+                                  id="mensagem" name="descricao" col="8" rows="4" required></textarea>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="d-grid mx-auto">
+                        <button type="submit" class="btn btn-info">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

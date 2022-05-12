@@ -1,0 +1,136 @@
+﻿@page
+@model IndexModel
+@{ ViewData["Title"] = "Inicio"; }
+
+<div class="container">
+    <h1> Bem Vindo </h1>
+    <div class="row">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info mb-1">
+                                Total de produtos no estoque
+                            </div>
+                            <div class="h3 mb-0">
+                                <h5>@Html.DisplayFor(Model => Model.Estoque)</h5>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-archive fa-2x text-info"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success mb-1">
+                                Total de produtos Vendidos
+                            </div>
+                            <div class="h3 mb-0">
+                                <h5>@Html.DisplayFor(Model => Model.UltimaSaida)</h5>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-shopping-bag fa-2x text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning mb-1">
+                                Melhor Venda
+                            </div>
+                            <div class="h3 mb-0">
+                                @foreach (var data in Model.MaisVenda)
+                                {
+                                    <h5> @Html.DisplayFor(Model => data.nome)</h5>
+                                }
+
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-trophy fa-2x text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col">
+
+            <h3 class="mb-3 mt-4 ml-2">Ultimas Saídas</h3>
+
+            <div class="rounded bg-white shadow-sm border">
+                <table class="table table-striped border-0">
+                    <thead class="table table-borderless">
+                        <tr>
+                            <th scope="col">ID Venda</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Tam</th>
+                            <th scope="col">Qtde</th>
+                            <th scope="col">Data</th>
+                        </tr>
+                    </thead>
+                    @foreach (var data in Model.UltimasAtulizacoes)
+                    {
+                        <tbody>
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => data.ID)</td>
+                                <td> @Html.DisplayFor(modelItem => data.Produto.nome)</td>
+                                <td> @Html.DisplayFor(modelItem => data.Produto.tamanho)</td>
+                                <td> @Html.DisplayFor(modelItem => data.quantidade)</td>
+                                <td> @Html.DisplayFor(modelItem => data.data)</td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col col-lg-4">
+
+            <h3 class="mb-3 mt-4 ml-2">Ultimas Entradas</h3>
+
+            <div class="rounded bg-white shadow-sm border">
+                <table class="table table-striped border-0">
+                    <thead class="table table-borderless">
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Qtde</th>
+                        </tr>
+                    </thead>
+
+                    @foreach (var data in Model.Produtos)
+                    {
+                        <tbody>
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => data.ID)</td>
+                                <td> @Html.DisplayFor(modelItem => data.nome)</td>
+                                <td> @Html.DisplayFor(modelItem => data.quantidade)</td>
+                            </tr>
+
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

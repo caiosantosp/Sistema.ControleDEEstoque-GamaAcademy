@@ -1,0 +1,54 @@
+﻿@page
+@model ControleDeEstoque.Pages.Produtos.IndexModel
+@{ViewData["Title"] = "Produtos";
+}
+<div class="align-items-center">
+    <center>
+        <h1>Controle de Estoque</h1>
+    </center>
+</div>
+<section>
+    <div bg-light>
+        <div class="container">
+            <div class="row">
+                @foreach (var data in Model.Produtos)
+                {
+
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top img-fluid" src="@Html.DisplayFor(modelItem => data.imagem)"
+                                 alt="Imagem">
+                            <div class="card-body">
+                                <form class="needs-validation" novalidate>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label>@Html.DisplayFor(modelItem => data.nome)</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label>Código: @Html.DisplayFor(modelItem => data.ID)</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label>Tam: @Html.DisplayFor(modelItem => data.tamanho)</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label>Qtde: @Html.DisplayFor(modelItem => data.quantidade) </label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>Categoria: @Html.DisplayFor(modelItem => data.Categoria.nomeCategoria)</label>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="align-items-center">
+                                    <div>
+                                        <a asp-page="/Produtos/Detail" asp-route-id="@data.ID" Detalhes type="button"
+                                           class="w-100 btn btn-lg btn-primary">Detalhes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,97 @@
+﻿
+
+@page
+@model ControleDeEstoque.Pages.Produtos.DetailModel
+@{
+}
+
+<div class="container">
+    <div class="row d-flex justify-content-between pr-3" item.id="@Model.Produto.ID">
+        <h1 class="pl-3">Controle de Estoque/Detalhes</h1>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-8">
+            <div class="card shadow-sm h-90 py-2">
+                <div class="card-body">
+                    <div class="d-flex justify-content-md-between pb-3">
+                        <p class="text-secondary font-weight-bold">
+                            <span>
+                                Modelo: @Html.DisplayFor(model => Model.Produto.modelo)
+                            </span>
+                        </p>
+                        <p class="text-secondary font-weight-bold">
+                            Código: <span class="text-dark">
+                                @Html.DisplayFor(model => Model.Produto.ID)
+                            </span>
+                        </p>
+                    </div>
+                    <h2 class="pb-3">@Html.DisplayFor(model => Model.Produto.nome)</h2>
+                    <div class="d-flex justify-content-md-between pb-3">
+                        <p class="text-secondary font-weight-bold">
+                            <span> Tam: @Html.DisplayFor(model => Model.Produto.tamanho) </span>
+                        </p>
+                        <p class="text-secondary font-weight-bold">
+                            R$<span class="text-dark">
+                                @Html.DisplayFor(model => Model.Produto.preco)
+                            </span>
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-md-between pb-sm-3">
+                        <p class="text-secondary font-weight-bold">
+                            Categoria:<span class="text-dark font-weight-normal">
+                                @Html.DisplayFor(model => Model.Produto.Categoria.nomeCategoria)
+                            </span>
+                        </p>
+                        <p class="text-secondary font-weight-bold">
+                            Qtde: <span class="text-dark">
+                                @Html.DisplayFor(model => Model.Produto.quantidade)
+                            </span>
+                        </p>
+                    </div>
+                    <p class="text-secondary font-weight-bold">
+                        Descrição:
+                        <span class="text-dark font-weight-normal">
+                            @Html.DisplayFor(model => Model.Produto.descricao)
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-4">
+            <div class="card shadow-sm h-100 py-2">
+                <div class="card-body h-25">
+                    <img src="@Html.DisplayFor(model => model.Produto.imagem)"
+                         class="img-fluid rounded" alt="Imagem responsiva" height="50">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h1 class="pl-3 mt-2">Excluir / Atualizar Produtos</h1>
+    </div>
+    <div class="row">
+        <div class="col col-lg-8">
+            <div class="card shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row d-flex justify-content-between pb-2">
+                        <div class="col col-8 input-group input-group-sm align-items-center">
+                            <div class="input-group-prepend">
+                            </div>
+                            <div class="text-center">
+                                <a class="btn btn-danger" asp-page="/Produtos/Delete"
+                                   asp-route-id="@Model.Produto.ID">Excluir</a>
+                            </div>
+                            <div class="col col-4 d-flex justify-content-around text-center">
+                                <a class="btn btn-success" asp-page="/Produtos/Edit"
+                                   asp-route-id="@Model.Produto.ID">Atualizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
